@@ -2,7 +2,7 @@
   "name": "mountain-cat-alpha",
   "version": "1.0.0",
   "description": "",
-  "main": "src/client/app/index.jsx",
+  "main": "src/index.jsx",
   "dependencies": {
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "connect": "^3.5.0",
+    "json-loader": "^0.5.7",
     "serve-static": "^1.11.1"
   },
   "scripts": {

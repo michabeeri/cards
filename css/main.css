@@ -3,13 +3,15 @@ body {
 }
 
 #appContainer {
+    font-family: muli;
+}
+
+#cards {
     display: flex;
     align-items: center;
-    height: 100%;
     flex-wrap: wrap;
     align-content: flex-start;
     justify-content: flex-start;
-    font-family: muli;
 }
 
 .cardContainer {
