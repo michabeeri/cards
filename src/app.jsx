@@ -2,13 +2,14 @@ import React from 'react';
 import _ from 'lodash';
 import Card from './card.jsx';
 import cardsData from './cards.json';
+import fa from 'fontawesome';
 
 
 //npm install webpack -g
 //webpack --progress --colors --watch
 
 class App extends React.Component {
-    renderLocations () {
+    renderLocations() {
         return (
             <div id="locations">
                 <ul className="locationsList">
@@ -20,21 +21,46 @@ class App extends React.Component {
         )
     }
 
-    renderCards () {
+    renderCards() {
         return (
             <div id='cards'>
-                {_.map(cardsData, function(c){
+                {_.map(cardsData, function (c) {
                     return (<Card card={c} key={`card-${c.id}`}></Card>);
                 })}
             </div>
         );
     }
 
-    render () {
+    renderWeather() {
+        var weatherData = [
+            {id: 'temprature', icon: 'fa-thermometer-half', value: '-20', units: '\u00B0'},
+            {id: 'windChill', icon: 'fa-flag-checkered', value: '-10', units: '\u00B0'},
+            {id: 'snowCover', icon: 'fa-snowflake-o', value: '45', units: 'cm'},
+            {id: 'snowFall', icon: 'fa-cloud', value: '5', units: 'cm'}
+        ];
+        return (
+            <div id="weatherDisplay">
+                {_.map(weatherData, item => {
+                    return (
+                        <div id={item.id} key={`weatherItem_${item.id}`} className="weatherDisplayData">
+                            <div className="icon">
+                                <i className={`fa ${item.icon}`}></i>
+                            </div>
+                            <span>{` ${item.value}${item.units}`}</span>
+                        </div>
+                    )
+                })}
+            </div>
+        );
+    }
+
+    render() {
+        console.log(fa)
         return (
             <div id='appContainer'>
-                {this.renderLocations()}
-                {this.renderCards()}
+                {false && this.renderLocations()}
+                {false && this.renderCards()}
+                {this.renderWeather()}
             </div>
         );
     }

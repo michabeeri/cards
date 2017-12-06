@@ -64,3 +64,36 @@ body {
     margin: 0;
     font-size: 16px;
 }
+
+#weatherDisplay {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 92px;
+    border: 1px solid black;
+    border-radius: 5%;
+    padding-bottom: 4px;
+}
+
+.weatherDisplayData {
+    display: flex;
+    width: 84px;
+    justify-content: space-between;
+    padding-top: 4px;
+}
+
+.weatherDisplayData .icon {
+    width: 28px;
+    height: 20px;
+}
+
+.icon {
+    position: relative;
+}
+
+.icon .fa {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
