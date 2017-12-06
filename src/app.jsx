@@ -2,7 +2,6 @@ import React from 'react';
 import _ from 'lodash';
 import Card from './card.jsx';
 import cardsData from './cards.json';
-import fa from 'fontawesome';
 
 
 //npm install webpack -g
@@ -40,8 +39,7 @@ class App extends React.Component {
         ];
         return (
             <div id="weatherDisplay">
-                {_.map(weatherData, item => {
-                    return (
+                {_.map(weatherData, item => (
                         <div id={item.id} key={`weatherItem_${item.id}`} className="weatherDisplayData">
                             <div className="icon">
                                 <i className={`fa ${item.icon}`}></i>
@@ -49,18 +47,35 @@ class App extends React.Component {
                             <span>{` ${item.value}${item.units}`}</span>
                         </div>
                     )
-                })}
+                )}
+            </div>
+        );
+    }
+
+    renderDate() {
+        var day = 10;
+        return (
+            <div id="dateDisplay">
+                <div id="dateBar">
+                    {_.range(1, 41).map(i => (
+                            <div key={`dateMark_${i}`} className={'icon' + (i === 10 ? ' currentDay' : '')}>
+                                <i className="fa fa-plus"></i>
+                            </div>
+                        )
+                    )}
+                </div>
+                <div id="daysCounter">{day}</div>
             </div>
         );
     }
 
     render() {
-        console.log(fa)
         return (
             <div id='appContainer'>
                 {false && this.renderLocations()}
                 {false && this.renderCards()}
                 {this.renderWeather()}
+                {this.renderDate()}
             </div>
         );
     }
