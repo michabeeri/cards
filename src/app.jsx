@@ -7,11 +7,6 @@ import WeatherDisplay from './weatherDisplay.jsx';
 import weatherLogic from './weatherLogic.js';
 import dateLogic from './dateLogic';
 
-const initialDate = {
-    day: 1,
-    season: 'Autumn'
-};
-
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -40,7 +35,9 @@ class App extends React.Component {
 
     renderDate() {
         return (
-            <DateDisplay {..._.pick(this.state, ['day', 'season'])}/>
+            <DateDisplay
+                {..._.pick(this.state, ['day', 'season'])}
+                updateDate={date => this.setState(date)}/>
         );
     }
 

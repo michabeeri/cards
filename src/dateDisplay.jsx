@@ -23,7 +23,9 @@ class DateDisplay extends React.Component {
                 <div id="dateLabel">{formatDateString(season, day)}</div>
                 <div id="dateBar">
                     {_.times(40).map(i => (
-                            <div key={`dateMark_${i}`} className={'icon' + (i === daysTotal ? ' currentDay' : '')}>
+                            <div key={`dateMark_${i}`}
+                                 className={'icon' + (i === daysTotal ? ' currentDay' : '')}
+                                 onClick={e => this.props.updateDate(dateLogic.daysTotalToDate(i))}>
                                 <i className="fa fa-plus"></i>
                             </div>
                         )
