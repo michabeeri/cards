@@ -18,6 +18,7 @@ const range = {
     temprature: {min: -40, max: 20},
     windChill: {min: 0, max: 9},
     snowCover: {min: 0, max: 9},
+    snowFall: {min: -2, max: 2}
 };
 
 function roll(currentState, season) {
@@ -45,5 +46,6 @@ function roll(currentState, season) {
 
 export default {
     initialValues,
+    range,
     roll
 };

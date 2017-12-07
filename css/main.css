@@ -82,6 +82,10 @@ body {
     padding-top: 4px;
 }
 
+.weatherDisplayData input {
+    width: 40px;
+}
+
 .weatherDisplayData .icon {
     width: 28px;
     height: 20px;

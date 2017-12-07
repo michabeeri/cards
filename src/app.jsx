@@ -32,7 +32,9 @@ class App extends React.Component {
 
     renderWeather() {
         return (
-            <WeatherDisplay {..._.pick(this.state, ['temprature', 'windChill', 'snowCover', 'snowFall'])}/>
+            <WeatherDisplay
+                {..._.pick(this.state, ['temprature', 'windChill', 'snowCover', 'snowFall'])}
+                updateWeather={(id, value) => this.setState(_.set({}, id, value))}/>
         );
     }
 
