@@ -4,8 +4,8 @@ import _ from 'lodash';
 //import cardsData from './cards.json';
 import DateDisplay from './dateDisplay.jsx';
 import WeatherDisplay from './weatherDisplay.jsx';
-import WeatherLogic from './weatherLogic.js';
-import weatherLogic from "./weatherLogic";
+import weatherLogic from './weatherLogic.js';
+import dateLogic from './dateLogic';
 
 const initialDate = {
     day: 1,
@@ -15,15 +15,16 @@ const initialDate = {
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = _.assign({}, WeatherLogic.initialValues, initialDate);
+        this.state = _.assign({}, weatherLogic.initialValues, dateLogic.initialValues);
         this.roll = this.roll.bind(this);
     }
 
     roll() {
-        this.setState(weatherLogic.roll(
-            _.pick(this.state, ['temprature', 'windChill', 'snowCover', 'snowFall']),
-            this.state.season
-        ));
+        const currentDate = _.pick(this.state, ['season', 'day']);
+        const nextDate = dateLogic.getNextDate(currentDate);
+        const currentWeather = _.pick(this.state, ['temprature', 'windChill', 'snowCover', 'snowFall']);
+        const nextWeather = weatherLogic.roll(currentWeather, nextDate.season);
+        this.setState(_.assign({}, nextWeather, nextDate));
     }
 
     // renderLocations() {return (<div id="locations"><ul className="locationsList"><li>Rockfall ravine</li><li>Arid steppes</li><li>Horton's ridge</li></ul></div>)}
