@@ -1,70 +1,51 @@
 import React from 'react';
 import _ from 'lodash';
-import Card from './card.jsx';
-import cardsData from './cards.json';
+//import Card from './card.jsx';
+//import cardsData from './cards.json';
+import DateDisplay from './dateDisplay.jsx';
+import WeatherDisplay from './weatherDisplay.jsx';
+import WeatherLogic from './weatherLogic.js';
+import weatherLogic from "./weatherLogic";
 
-
-//npm install webpack -g
-//webpack --progress --colors --watch
+const initialDate = {
+    day: 1,
+    season: 'Autumn'
+};
 
 class App extends React.Component {
-    renderLocations() {
-        return (
-            <div id="locations">
-                <ul className="locationsList">
-                    <li>Rockfall ravine</li>
-                    <li>Arid steppes</li>
-                    <li>Horton's ridge</li>
-                </ul>
-            </div>
-        )
+    constructor(props) {
+        super(props);
+        this.state = _.assign({}, WeatherLogic.initialValues, initialDate);
+        this.roll = this.roll.bind(this);
     }
 
-    renderCards() {
-        return (
-            <div id='cards'>
-                {_.map(cardsData, function (c) {
-                    return (<Card card={c} key={`card-${c.id}`}></Card>);
-                })}
-            </div>
-        );
+    roll() {
+        this.setState(weatherLogic.roll(
+            _.pick(this.state, ['temprature', 'windChill', 'snowCover', 'snowFall']),
+            this.state.season
+        ));
     }
+
+    // renderLocations() {return (<div id="locations"><ul className="locationsList"><li>Rockfall ravine</li><li>Arid steppes</li><li>Horton's ridge</li></ul></div>)}
+    // renderCards() {return (<div id='cards'>{_.map(cardsData, function (c) {return (<Card card={c} key={`card-${c.id}`}></Card>);})}</div>);}
 
     renderWeather() {
-        var weatherData = [
-            {id: 'temprature', icon: 'fa-thermometer-half', value: '-20', units: '\u00B0'},
-            {id: 'windChill', icon: 'fa-flag-checkered', value: '-10', units: '\u00B0'},
-            {id: 'snowCover', icon: 'fa-snowflake-o', value: '45', units: 'cm'},
-            {id: 'snowFall', icon: 'fa-cloud', value: '5', units: 'cm'}
-        ];
         return (
-            <div id="weatherDisplay">
-                {_.map(weatherData, item => (
-                        <div id={item.id} key={`weatherItem_${item.id}`} className="weatherDisplayData">
-                            <div className="icon">
-                                <i className={`fa ${item.icon}`}></i>
-                            </div>
-                            <span>{` ${item.value}${item.units}`}</span>
-                        </div>
-                    )
-                )}
-            </div>
+            <WeatherDisplay {..._.pick(this.state, ['temprature', 'windChill', 'snowCover', 'snowFall'])}/>
         );
     }
 
     renderDate() {
-        var day = 10;
         return (
-            <div id="dateDisplay">
-                <div id="dateBar">
-                    {_.range(1, 41).map(i => (
-                            <div key={`dateMark_${i}`} className={'icon' + (i === 10 ? ' currentDay' : '')}>
-                                <i className="fa fa-plus"></i>
-                            </div>
-                        )
-                    )}
-                </div>
-                <div id="daysCounter">{day}</div>
+            <DateDisplay {..._.pick(this.state, ['day', 'season'])}/>
+        );
+    }
+
+    renderControls() {
+        return (
+            <div id="gameControls">
+                <div className="icon"><i className='fa fa-repeat'></i></div>
+                <div className="icon" onClick={this.roll}><i className='fa fa-play'></i></div>
             </div>
         );
     }
@@ -74,8 +55,9 @@ class App extends React.Component {
             <div id='appContainer'>
                 {false && this.renderLocations()}
                 {false && this.renderCards()}
-                {this.renderWeather()}
                 {this.renderDate()}
+                {this.renderWeather()}
+                {this.renderControls()}
             </div>
         );
     }
