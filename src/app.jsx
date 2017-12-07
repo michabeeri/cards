@@ -44,7 +44,6 @@ class App extends React.Component {
     renderControls() {
         return (
             <div id="gameControls">
-                <div className="icon"><i className='fa fa-repeat'></i></div>
                 <div className="icon" onClick={this.roll}><i className='fa fa-play'></i></div>
             </div>
         );

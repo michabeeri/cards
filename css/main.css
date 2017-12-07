@@ -139,10 +139,10 @@ body {
 
 #gameControls {
     display: flex;
-    justify-content: space-between;
     margin: auto;
     width: 160px;
-    padding-top: 60px;
+    padding-top: 30px;
+    justify-content: center;
 }
 
 #gameControls .icon {
