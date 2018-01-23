@@ -1,3 +1,8 @@
+html {
+    transform-origin: top left;
+    transform: scale(0.3);
+}
+
 body {
     margin: 0;
 }
@@ -12,14 +17,15 @@ body {
     flex-wrap: wrap;
     align-content: flex-start;
     justify-content: flex-start;
+    width: 3508px;
 }
 
 .cardContainer {
-    height: 350px;
-    width: 250px;
+    height: 620px;
+    width: 438px;
     border: 2px solid black;
     border-radius: 10px;
-    margin: 10px;
+    box-sizing: border-box;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -27,123 +33,50 @@ body {
 
 .cardContainer .imageContainer {
     width: 100%;
-    flex: 0 0 60px;
-    background: no-repeat center/20% url(../resources/skull-and-bones.svg) moccasin;
+    flex: 0 0 138px;
 }
 
-.cardContainer .subjectH {
-    flex: 0 0;
-    margin: 14px 0 0 0;
+.cardContainer .imageContainer.fork-0{
+    background: no-repeat url(../resources/deadEnd.png) moccasin;
 }
 
-.cardContainer .mainDescP {
-    flex: 0 0;
-    margin: 4px 10% 0 10%;
-    font-size: 12px;
-    font-style: italic;
-    color: darkolivegreen;
+.cardContainer .imageContainer.fork-1{
+    background: no-repeat url(../resources/trail.png) moccasin;
 }
 
-.cardContainer .separator {
-    flex: 0 0;
-    margin: 10px 20% 0;
-    border-top: 1px solid black;
-    height: 1px;
+.cardContainer .imageContainer.fork-2{
+    background: no-repeat url(../resources/split.png) moccasin;
 }
 
-.cardContainer .resultContainer {
-    flex: 1 0;
+.cardContainer .imageContainer.fork-3{
+    background: no-repeat url(../resources/split-3.png) moccasin;
+}
+
+.cardContainer .pathsContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 60px;
+    flex-grow: 1;
 }
 
-.cardContainer .resultContainer .resultP {
-    flex: 0 0;
-    margin: 0;
-    font-size: 16px;
-}
-
-#weatherDisplay {
-    margin: auto;
+.cardContainer .pathsContainer .pathInfo {
+    flex: 1 0 120px;
     display: flex;
-    flex-direction: column;
-    width: 92px;
-    border: 1px solid black;
-    border-radius: 5%;
-    padding-bottom: 4px;
+    align-items: center;
+    box-sizing: border-box;
+    border-top: solid 4px;
 }
 
-.weatherDisplayData {
-    display: flex;
-    width: 84px;
-    justify-content: space-between;
-    padding-top: 4px;
-}
-
-.weatherDisplayData .icon {
-    width: 28px;
-    height: 20px;
-}
-
-.icon {
+.cardContainer .pathsContainer .pathInfo .icon {
     position: relative;
+    width: 90px;
+    height: 90px;
+    font-size: 60px;
 }
 
-.icon .fa {
+.cardContainer .pathsContainer .pathInfo .icon .fa {
     position: absolute;
-    left: 50%;
-    top: 50%;
     transform: translate(-50%, -50%);
-}
-
-#dateDisplay {
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    width: 280px;
-    justify-content: space-between;
-    padding-top: 24px;
-}
-
-#dateBar {
-    display: flex;
-    width: 100%;
-    padding: 24px 0;
-}
-
-#dateBar .icon {
-    height: 7px;
-    width: 7px;
-    font-size: 10px;
-}
-
-#dateBar .currentDay::before {
-    position: absolute;
-    left: 50%;
     top: 50%;
-    transform: translate(-50%, -125%);
-    content: '▼';
-}
-
-#dateLabel {
-    text-align: center;
-    width: 100%;
-}
-
-#gameControls {
-    display: flex;
-    justify-content: space-between;
-    margin: auto;
-    width: 160px;
-    padding-top: 60px;
-}
-
-#gameControls .icon {
-    height: 36px;
-    width: 36px;
-    border: 1px solid black;
-    border-radius: 20px;
+    left: 50%;
 }

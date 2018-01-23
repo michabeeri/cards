@@ -1,40 +1,28 @@
 import React from 'react';
-// import _ from 'lodash';
+import _ from 'lodash';
 
 class Card extends React.Component {
-    renderContent () {
-        var card = this.props.card;
-        if (card.multiselect) {
-            return <div></div>;
-        }
+    getForkClass () {
+        return `fork-${_.get(this.props, 'paths', []).length}`;
+    }
 
-        if (card.prob) {
-            return <div></div>;
-        }
-
-        if (card.result) {
-            return (
-                <div className="resultContainer">
-                    <p className="resultP">{card.result}</p>
-                </div>
-            );
-        }
+    getPathInfo (path) {
+        return (<div className='pathInfo'>{_.compact([
+            path.north === 1 && <div className="icon"><i className="fa fa-compass" style={{color: '#66cd00'}}></i></div>,
+            path.north === -1 && <div className="icon"><i className="fa fa-compass" style={{color: '#ff6347'}}></i></div>
+        ])}
+        </div>);
     }
 
     render () {
-        var card = this.props.card;
+        //var card = this.props.card;
         return (
             <div className='cardContainer'>
-                <div className="imageContainer"></div>
-                <h4 className="subjectH">{card.subj}</h4>
-                <p className="mainDescP">{card.desc}</p>
-                <div className="separator"></div>
-                {this.renderContent()}
+                <div className={`imageContainer ${this.getForkClass()}`}></div>
+                <div className="pathsContainer">{_.map(_.get(this.props, 'paths', []), this.getPathInfo)}</div>
             </div>
         );
     }
 }
-
-//<div className="separator"></div>
 
 export default Card;

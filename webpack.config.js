@@ -36,7 +36,11 @@ var config = {
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
         devFlagPlugin
-    ]
+    ],
+    watch: true,
+    watchOptions: {
+        poll: true
+    }
 };
 
 module.exports = config;
