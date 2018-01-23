@@ -21,50 +21,63 @@ body {
 }
 
 .cardContainer {
+    position: relative;
     height: 620px;
     width: 438px;
-    border: 2px solid black;
-    border-radius: 10px;
-    box-sizing: border-box;
     text-align: center;
     display: flex;
     flex-direction: column;
+    box-shadow: inset 0px 0px 0px 2px black;
 }
 
-.cardContainer .imageContainer {
-    width: 100%;
-    flex: 0 0 138px;
+.cardContainer .forkDelta-0,
+.cardContainer .forkDelta-1,
+.cardContainer .forkDelta-2,
+.cardContainer .forkDelta-3 {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    right: 0;
+    top: 0;
+    font-size: 45px;
+    line-height: 90px;
+    border: solid 2px black;
+    border-bottom-left-radius: 50%;
+    font-weight: bold;
 }
 
-.cardContainer .imageContainer.fork-0{
-    background: no-repeat url(../resources/deadEnd.png) moccasin;
+.cardContainer .forkDelta-0 {
+    background-color: lightgray;
 }
 
-.cardContainer .imageContainer.fork-1{
-    background: no-repeat url(../resources/trail.png) moccasin;
+.cardContainer .forkDelta-1 {
+    background-color: #d99779;
 }
 
-.cardContainer .imageContainer.fork-2{
-    background: no-repeat url(../resources/split.png) moccasin;
+.cardContainer .forkDelta-2 {
+    background-color: #31ac95;
 }
 
-.cardContainer .imageContainer.fork-3{
-    background: no-repeat url(../resources/split-3.png) moccasin;
+.cardContainer .forkDelta-3 {
+    background-color: #e500e5;
 }
 
 .cardContainer .pathsContainer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     flex-grow: 1;
 }
 
 .cardContainer .pathsContainer .pathInfo {
-    flex: 1 0 120px;
+    flex: 0 0 155px;
     display: flex;
     align-items: center;
-    box-sizing: border-box;
-    border-top: solid 4px;
+    box-shadow: inset 0px 0px 0px 2px black;
+}
+
+.cardContainer .pathsContainer .pathInfo.current {
+    background-color: moccasin;
 }
 
 .cardContainer .pathsContainer .pathInfo .icon {

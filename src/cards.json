@@ -5,5 +5,25 @@
   {"paths":[{"north": -1}]},
   {"paths":[{}, {}]},
   {"paths":[{"north": 1}, {}]},
-  {"paths":[{}, {}, {}]}
+  {"paths":[{}, {}, {}]},
+
+  {"minerals": true}, {"minerals": true}, {"minerals": true}, {"minerals": true},
+  {"hero": true}, {"hero": true},
+  {"ritual": true},
+  {"item": true},
+  {"quest": true},
+  {"monster": true, "minerals": true}, {"monster": true, "minerals": true}, {"monster": true, "minerals": true}, {"monster": true, "minerals": true},
+  {"monster": true, "hero": true}, {"monster": true, "hero": true}, {"monster": true, "hero": true},
+  {"monster": true, "ritual": true}, {"monster": true, "ritual": true},
+  {"monster": true, "item": true}, {"monster": true, "item": true},
+  {"monster": true, "quest": true},
+  {"obstacle": true, "minerals": true}, {"obstacle": true, "minerals": true}, {"obstacle": true, "minerals": true}, {"obstacle": true, "minerals": true},
+  {"obstacle": true, "hero": true}, {"obstacle": true, "hero": true}, {"obstacle": true, "hero": true}, {"obstacle": true, "hero": true},
+  {"obstacle": true, "ritual": true}, {"obstacle": true, "ritual": true}, {"obstacle": true, "ritual": true},
+  {"obstacle": true, "item": true}, {"obstacle": true, "item": true},
+  {"obstacle": true, "quest": true},
+  {"riddle": true, "ritual": true},
+  {"riddle": true, "item": true},
+  {"riddle": true, "quest": true}
+
 ]
