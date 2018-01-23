@@ -30,10 +30,11 @@ body {
     box-shadow: inset 0px 0px 0px 2px black;
 }
 
+
+.cardContainer .forkDelta--1,
 .cardContainer .forkDelta-0,
 .cardContainer .forkDelta-1,
-.cardContainer .forkDelta-2,
-.cardContainer .forkDelta-3 {
+.cardContainer .forkDelta-2{
     position: absolute;
     width: 90px;
     height: 90px;
@@ -46,19 +47,20 @@ body {
     font-weight: bold;
 }
 
-.cardContainer .forkDelta-0 {
+.cardContainer .forkDelta--1 {
     background-color: lightgray;
 }
 
-.cardContainer .forkDelta-1 {
+.cardContainer .forkDelta-0 {
     background-color: #d99779;
+    display: none;
 }
 
-.cardContainer .forkDelta-2 {
+.cardContainer .forkDelta-1 {
     background-color: #31ac95;
 }
 
-.cardContainer .forkDelta-3 {
+.cardContainer .forkDelta-2 {
     background-color: #e500e5;
 }
 
@@ -92,4 +94,25 @@ body {
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
+}
+
+.cardContainer .pathsContainer .pathInfo .measureWithIcon {
+    position: relative;
+    margin-right: 20px;
+}
+
+.cardContainer .pathsContainer .pathInfo .measureWithIcon .measureValue {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    color: red;
+    width: 60px;
+    height: 60px;
+    font-size: 50px;
+    font-weight: bolder;
+    z-index: 2;
+    border-radius: 50%;
+    background-color: rgba(200, 200, 200, 0.8);
+    line-height: 60px;
+    border: solid 1px black;
 }
