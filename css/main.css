@@ -11,7 +11,7 @@ body {
     font-family: muli;
 }
 
-#cards {
+.cards {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -82,14 +82,14 @@ body {
     background-color: moccasin;
 }
 
-.cardContainer .pathsContainer .pathInfo .icon {
+.icon {
     position: relative;
     width: 90px;
     height: 90px;
     font-size: 60px;
 }
 
-.cardContainer .pathsContainer .pathInfo .icon .fa {
+.icon .fa {
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
@@ -115,4 +115,36 @@ body {
     background-color: rgba(200, 200, 200, 0.8);
     line-height: 60px;
     border: solid 1px black;
+}
+
+.cardContainer .heroInfo {
+    flex: 1 0;
+    box-shadow: inset 0px 0px 0px 2px black;
+}
+
+.cardContainer .heroInfo.possessed {
+    transform: rotate(180deg);
+}
+
+.cardContainer .heroInfo .heroBanner{
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+}
+
+.cardContainer .heroInfo .heroBanner .heroName{
+    margin-right: 20px;
+    text-align: left;
+}
+
+.cardContainer .heroInfo .heroStates{
+    display: flex;
+    flex: 1 0;
+    flex-flow: wrap;
+    margin-top: 20px;
+}
+
+.cardContainer .heroInfo .heroStates .heroStateSingle{
+    flex: 0 0 140px;
+    font-size: 40px;
 }

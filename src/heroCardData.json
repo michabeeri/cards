@@ -1,0 +1,42 @@
+[
+  {"name": "Gurd", "heroClass": "hellion", "combat": 3, "ingenuity": 1, "hearts": 2, "possessed": {"name": "Drez'gorin", "combat": 5, "ingenuity": 1}},
+  {"name": "Dath", "heroClass": "hellion", "combat": 3, "ingenuity": 1, "hearts": 2, "possessed": {"name": "Zulmadaz", "combat": 4, "ingenuity": 2}},
+  {"name": "Hul", "heroClass": "hellion", "combat": 3, "ingenuity": 1, "hearts": 3, "possessed": {"name": "Zinarag", "combat": 5, "ingenuity": 1}},
+  {"name": "Hyarfekr", "heroClass": "hellion", "combat": 3, "ingenuity": 1, "hearts": 3, "possessed": {"name": "Toggaxin", "combat": 4, "ingenuity": 2}},
+  {"name": "Gukill", "heroClass": "hellion", "combat": 3, "ingenuity": 1, "hearts": 3, "possessed": {"name": "Delmurol", "combat": 6}},
+
+  {"name": "Armant the Mighty", "heroClass": "crusader", "combat": 2, "ingenuity": 2, "hearts": 3, "possessed": {"name": "Orgaran", "combat": 4, "ingenuity": 2}},
+  {"name": "Willelmus the Wolf", "heroClass": "crusader", "combat": 2, "ingenuity": 1, "scouting": 1, "hearts": 3, "possessed": {"name": "Daronoth", "combat": 3, "ingenuity": 2, "scouting": 1}},
+  {"name": "Tim the Wild", "heroClass": "crusader", "combat": 2, "ingenuity": 1, "scouting": 1, "hearts": 3, "possessed": {"name": "Ozgoroth", "combat": 3, "ingenuity": 2, "scouting": 1}},
+  {"name": "Thybaudin the Reckless", "heroClass": "crusader", "combat": 2, "scouting": 2, "hearts": 3, "possessed": {"name": "Voggoxan", "combat": 4, "ingenuity": 1, "scouting": 2}},
+  {"name": "Conayn the Agile", "heroClass": "crusader", "combat": 3, "ingenuity": 1, "hearts": 3, "possessed": {"name": "Irgallan", "combat": 3, "ingenuity": 3}},
+
+  {"name": "Garrick Angel Eyes", "heroClass": "highwayman", "combat": 1, "ingenuity": 2, "scouting": 1, "hearts": 3, "possessed": {"name": "Therkaleth", "combat": 2, "ingenuity": 3, "scouting": 1}},
+  {"name": "Cameron the Crook", "heroClass": "highwayman", "combat": 1, "ingenuity": 2, "scouting": 1, "hearts": 3, "possessed": {"name": "Ror'ath", "combat": 2, "ingenuity": 2, "scouting": 2}},
+  {"name": "Berkeley Bandana", "heroClass": "highwayman", "combat": 1, "ingenuity": 2, "scouting": 1, "hearts": 3, "possessed": {"name": "Thagdruug", "combat": 1, "ingenuity": 2, "scouting": 3}},
+  {"name": "Smokey Joseph", "heroClass": "highwayman", "combat": 1, "ingenuity": 1, "scouting": 2, "hearts": 3, "possessed": {"name": "Gozgannuk", "combat": 1, "ingenuity": 2, "scouting": 3}},
+  {"name": "Cheating Alton", "heroClass": "highwayman", "combat": 1, "ingenuity": 1, "scouting": 2, "hearts": 3, "possessed": {"name": "Bizroduz", "combat": 1, "ingenuity": 2, "scouting": 3}},
+
+  {"name": "Sagitise", "heroClass": "plageDoctor", "combat": 1, "ingenuity": 1, "magic": 1, "hearts": 3, "possessed": {"name": "Ror'gadith", "combat": 2, "ingenuity": 1, "magic": 2}},
+  {"name": "Vilarri", "heroClass": "plageDoctor", "combat": 1, "ingenuity": 1, "magic": 1, "hearts": 3, "possessed": {"name": "Voromin", "combat": 1, "ingenuity": 2, "magic": 2}},
+  {"name": "Dusceliphe", "heroClass": "plageDoctor", "ingenuity": 2, "magic": 1, "hearts": 3, "possessed": {"name": "Ur'an", "ingenuity": 3, "magic": 2}},
+  {"name": "Eytelira", "heroClass": "plageDoctor", "ingenuity": 1, "magic": 2, "hearts": 3, "possessed": {"name": "Ungromik", "ingenuity": 2, "magic": 3}},
+  {"name": "Junipera", "heroClass": "plageDoctor", "ingenuity": 1, "magic": 2, "hearts": 3, "possessed": {"name": "Magimok", "magic": 4}},
+
+  {"name": "Ecrokar Molder", "heroClass": "Occultist", "ingenuity": 1, "magic": 2, "hearts": 3, "possessed": {"name": "Arelun", "ingenuity": 2, "magic": 3}},
+  {"name": "Rexir The Undertaker", "heroClass": "Occultist", "ingenuity": 1, "magic": 2, "hearts": 3, "possessed": {"name": "Vorgrath", "ingenuity": 1, "magic": 4}},
+  {"name": "Ohakhar The Carver", "heroClass": "Occultist", "magic": 3, "hearts": 2, "possessed": {"name": "Gerthras", "magic": 5}},
+  {"name": "Yaumon Calamity", "heroClass": "Occultist", "magic": 3, "hearts": 2, "possessed": {"name": "Uz'garos", "magic": 5}},
+  {"name": "Egigan Deville", "heroClass": "Occultist", "magic": 3, "hearts": 2, "possessed": {"name": "Kunakuth", "magic": 6}},
+
+  {"name": "Eluard", "combat": 1, "ingenuity": 1, "scouting": 1, "hearts": 3, "possessed": {"name": "Agthamen", "combat": 3, "ingenuity": 3, "scouting": 3}},
+  {"name": "Hann", "combat": 1, "ingenuity": 1, "scouting": 1, "hearts": 3, "possessed": {"name": "Kolgran", "combat": 3, "ingenuity": 3, "scouting": 3}},
+  {"name": "Americ", "combat": 1, "ingenuity": 1, "scouting": 1, "hearts": 3, "possessed": {"name": "Ostrirak", "combat": 3, "ingenuity": 3, "scouting": 3}},
+  {"name": "Rotbertus", "combat": 1, "ingenuity": 1, "scouting": 1, "hearts": 3, "possessed": {"name": "Volgiuth", "combat": 3, "ingenuity": 3, "scouting": 3}},
+  {"name": "Roguelin", "combat": 1, "ingenuity": 1, "scouting": 1, "hearts": 3, "possessed": {"name": "Igdriun", "combat": 3, "ingenuity": 3, "scouting": 3}},
+  {"name": "Moise", "combat": 1, "ingenuity": 1, "scouting": 1, "hearts": 3, "possessed": {"name": "Ig'thethuz", "combat": 3, "ingenuity": 3, "scouting": 3}},
+  {"name": "Thomasin", "combat": 1, "ingenuity": 1, "scouting": 1, "hearts": 3, "possessed": {"name": "Torzannath", "combat": 3, "ingenuity": 3, "scouting": 3}},
+  {"name": "Arturus", "combat": 1, "ingenuity": 1, "scouting": 1, "hearts": 3, "possessed": {"name": "Er'os", "combat": 3, "ingenuity": 3, "scouting": 3}},
+  {"name": "Mosseus", "combat": 1, "ingenuity": 1, "scouting": 1, "hearts": 3, "possessed": {"name": "Zallmokar", "combat": 3, "ingenuity": 3, "scouting": 3}},
+  {"name": "Gernier", "combat": 1, "ingenuity": 1, "scouting": 1, "hearts": 3, "possessed": {"name": "Or'anaad", "combat": 3, "ingenuity": 3, "scouting": 3}}
+]

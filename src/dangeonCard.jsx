@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
-class Card extends React.Component {
+class DangeonCard extends React.Component {
     getForkDelta () {
         const fork = _.get(this.props, 'fork', 0)
         const forkStr = `${fork > 0 ? '+' : ''}${fork}`
@@ -51,4 +51,4 @@ class Card extends React.Component {
     }
 }
 
-export default Card;
+export default DangeonCard;
