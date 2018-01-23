@@ -11,7 +11,9 @@ class Card extends React.Component {
     getPathInfo (path) {
         return (<div className={`pathInfo ${_.get(path, 'flags', []).join(' ')}`}>{_.compact([
             // conditions
-            path.scouting && <div className="measureWithIcon"><div className="measureValue">{path.scouting}</div><div className="icon"><i className="fa fa-binoculars"></i></div></div>,
+            path.forkMax && <div className="icon"><i className="fa fa-code-fork" style={{color: '#fd6a02'}}></i></div>,
+            _.isNumber(path.northAs) && <div className="measureWithIcon"><div className="measureValue">{path.northAs}</div><div className="icon"><i className="fa fa-map"></i></div></div>,
+            _.isNumber(path.scouting) && <div className="measureWithIcon"><div className="measureValue">{path.scouting}</div><div className="icon"><i className="fa fa-binoculars"></i></div></div>,
 
             // challanges
             path.monster && <div className="icon"><i className="fa fa-gavel" style={{color: '#4682b4'}}></i></div>,
