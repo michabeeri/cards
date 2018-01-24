@@ -30,56 +30,11 @@ body {
     box-shadow: inset 0px 0px 0px 2px black;
 }
 
-
-.cardContainer .forkDelta--1,
-.cardContainer .forkDelta-0,
-.cardContainer .forkDelta-1,
-.cardContainer .forkDelta-2{
-    position: absolute;
-    width: 90px;
-    height: 90px;
-    right: 0;
-    top: 0;
-    font-size: 45px;
-    line-height: 90px;
-    border: solid 2px black;
-    border-bottom-left-radius: 50%;
-    font-weight: bold;
-}
-
-.cardContainer .forkDelta--1 {
-    background-color: lightgray;
-}
-
-.cardContainer .forkDelta-0 {
-    background-color: #d99779;
-    display: none;
-}
-
-.cardContainer .forkDelta-1 {
-    background-color: #31ac95;
-}
-
-.cardContainer .forkDelta-2 {
-    background-color: #e500e5;
-}
-
-.cardContainer .pathsContainer {
+.cardContainer .eventContainer {
     display: flex;
-    flex-direction: column;
-    justify-content: start;
     flex-grow: 1;
-}
-
-.cardContainer .pathsContainer .pathInfo {
-    flex: 0 0 155px;
-    display: flex;
-    align-items: center;
-    box-shadow: inset 0px 0px 0px 2px black;
-}
-
-.cardContainer .pathsContainer .pathInfo.current {
-    background-color: moccasin;
+    justify-content: center;
+    padding-top: 60px;
 }
 
 .icon {
@@ -126,6 +81,7 @@ body {
     transform: rotate(180deg);
 }
 
+.cardContainer .dungeonBanner,
 .cardContainer .obstacleInfo .obstacleBanner,
 .cardContainer .mineralInfo .mineralBanner,
 .cardContainer .monsterInfo .monsterBanner,
@@ -137,6 +93,7 @@ body {
     flex: 0 0 100px;
 }
 
+.cardContainer .dungeonBanner .dungeonName,
 .cardContainer .obstacleInfo .obstacleBanner .obstacleName,
 .cardContainer .mineralInfo .mineralBanner .mineralName,
 .cardContainer .monsterInfo .monsterBanner .monsterName,

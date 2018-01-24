@@ -2,11 +2,6 @@ import React from 'react';
 import _ from 'lodash';
 
 class DangeonCard extends React.Component {
-    getForkDelta () {
-        const fork = _.get(this.props, 'fork', 0)
-        const forkStr = `${fork > 0 ? '+' : ''}${fork}`
-        return <div className={`forkDelta-${fork}`}>{forkStr}</div>
-    }
 
     getPathInfo (path) {
         return (<div className={`pathInfo ${_.get(path, 'flags', []).join(' ')}`}>{_.compact([
@@ -41,11 +36,32 @@ class DangeonCard extends React.Component {
     }
 
     render () {
-        //var card = this.props.card;
         return (
             <div className='cardContainer'>
-                {this.getForkDelta()}
-                <div className="pathsContainer">{this.getCompletePaths()}</div>
+                <div className="dungeonBanner">
+                    <div className="icon"><i className="fa fa-compass" style={{color: this.props.north ? '#ff7f50' : '#8db8c6'}}></i></div>
+                    <div className="dungeonName">{this.props.name}</div>
+                </div>
+                <div className="eventContainer">
+                    {_.compact([
+                        // conditions
+                        _.isNumber(this.props.scouting) && <div className="measureWithIcon"><div className="measureValue">{this.props.scouting}</div><div className="icon"><i className="fa fa-binoculars"></i></div></div>,
+
+                        // challanges
+                        this.props.monster && <div className="icon"><i className="fa fa-gavel"></i></div>,
+                        this.props.obstacle && <div className="icon"><i className="fa fa-exclamation-triangle"></i></div>,
+                        this.props.riddle && <div className="icon"><i className="fa fa-puzzle-piece"></i></div>,
+
+                        // rewards
+                        this.props.minerals && <div className="icon"><i className="fa fa-diamond"></i></div>,
+                        this.props.hero && <div className="icon"><i className="fa fa-user"></i></div>,
+                        this.props.ritual && <div className="icon"><i className="fa fa-spinner"></i></div>,
+                        this.props.item && <div className="icon"><i className="fa fa-gift"></i></div>
+                    ])}
+                </div>
+                <div className="xpIndicator">
+                    {_.times(this.props.camp, () => <div className="icon"><i className="fa fa-free-code-camp" style={{color: '#daa520'}}></i></div>)}
+                </div>
             </div>
         );
     }
