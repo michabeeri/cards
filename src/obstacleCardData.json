@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Rubble",
+    "requirements": [{"ingenuity": 5}, {"ingenuity": 3, "magic": 1}],
+    "quantity": 5
+  },
+  {
+    "name": "Rubble II",
+    "requirements": [{"ingenuity": 8}, {"ingenuity": 5, "magic": 2}],
+    "quantity": 2
+  },
+  {
+    "name": "Rubble III",
+    "requirements": [{"ingenuity": 12}, {"ingenuity": 8, "magic": 4}],
+    "quantity": 1
+  },
+  {
+    "name": "Barred Door",
+    "requirements": [{"ingenuity": 7}, {"magic": 4}],
+    "quantity": 3
+  },
+  {
+    "name": "Barred Door II",
+    "requirements": [{"ingenuity": 10}, {"magic": 6}],
+    "quantity": 1
+  },
+  {
+    "name": "Chasm",
+    "requirements": [{"ingenuity": 9}, {"magic": 5}],
+    "quantity": 1
+  },
+  {
+    "name": "Slippery Slope",
+    "requirements": [{"ingenuity": 6}, {"ingenuity": 3, "magic": 3}],
+    "quantity": 3
+  },
+  {
+    "name": "Crack",
+    "requirements": [{"ingenuity": 7}, {"ingenuity": 5, "magic": 2}],
+    "quantity": 2
+  }
+]

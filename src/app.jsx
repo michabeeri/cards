@@ -11,6 +11,9 @@ import MonsterCard from './monsterCard.jsx';
 import monsterCardsData from './monsterCardData.json';
 import MineralCard from './mineralCard.jsx';
 import mineralCardsData from './mineralCardData.json';
+import ObstacleCard from './obstacleCard.jsx';
+import obstacleCardsData from './obstacleCardData.json';
+
 class App extends React.Component {
     renderCards(dataset, ReactClass) {
         return <div className='cards'>
@@ -30,7 +33,8 @@ class App extends React.Component {
                 false && this.renderCards(heroCardsData, HeroCard),
                 false && this.renderCards(itemCardsData, ItemCard),
                 false && this.renderCards(monsterCardsData, MonsterCard),
-                this.renderCards(mineralCardsData, MineralCard)
+                false && this.renderCards(mineralCardsData, MineralCard),
+                this.renderCards(obstacleCardsData, ObstacleCard)
             ])}</div>
         );
     }

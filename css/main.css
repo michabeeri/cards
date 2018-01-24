@@ -126,6 +126,7 @@ body {
     transform: rotate(180deg);
 }
 
+.cardContainer .obstacleInfo .obstacleBanner,
 .cardContainer .mineralInfo .mineralBanner,
 .cardContainer .monsterInfo .monsterBanner,
 .cardContainer .itemInfo .itemBanner,
@@ -136,7 +137,8 @@ body {
     flex: 0 0 100px;
 }
 
-.cardContainer .monsterInfo .monsterBanner .mineralName,
+.cardContainer .obstacleInfo .obstacleBanner .obstacleName,
+.cardContainer .mineralInfo .mineralBanner .mineralName,
 .cardContainer .monsterInfo .monsterBanner .monsterName,
 .cardContainer .itemInfo .itemBanner .itemName,
 .cardContainer .heroInfo .heroBanner .heroName{
@@ -151,12 +153,13 @@ body {
     margin-top: 20px;
 }
 
-.monsterInfo .monsterOptions .monsterOptionsContainer .skillRequirement,
+.skillRequirement,
 .cardContainer .heroInfo .heroStates .heroStateSingle{
     flex: 0 0 140px;
     font-size: 40px;
 }
 
+.cardContainer .obstacleInfo,
 .cardContainer .mineralInfo,
 .cardContainer .itemInfo {
     display: flex;
@@ -190,6 +193,7 @@ body {
     flex-direction: column;
 }
 
+.obstacleInfo .obstacleRequirementContainer,
 .monsterInfo .monsterOptions .monsterOptionsContainer {
     display: flex;
     flex: 0 0 50px;
