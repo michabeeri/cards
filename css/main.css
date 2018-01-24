@@ -126,6 +126,7 @@ body {
     transform: rotate(180deg);
 }
 
+.cardContainer .monsterInfo .monsterBanner,
 .cardContainer .itemInfo .itemBanner,
 .cardContainer .heroInfo .heroBanner{
     display: flex;
@@ -134,6 +135,7 @@ body {
     flex: 0 0 100px;
 }
 
+.cardContainer .monsterInfo .monsterBanner .monsterName,
 .cardContainer .itemInfo .itemBanner .itemName,
 .cardContainer .heroInfo .heroBanner .heroName{
     margin: 0 20px;
@@ -147,6 +149,7 @@ body {
     margin-top: 20px;
 }
 
+.monsterInfo .monsterOptions .monsterOptionsContainer .skillRequirement,
 .cardContainer .heroInfo .heroStates .heroStateSingle{
     flex: 0 0 140px;
     font-size: 40px;
@@ -163,4 +166,40 @@ body {
     font-size: 40px;
     border-top: solid;
     padding-top: 40px;
+}
+
+.xpIndicator {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+}
+
+.monsterInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.monsterInfo .monsterOptions {
+    box-shadow: inset 0px 0px 0px 2px black;
+    flex: 0 0 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.monsterInfo .monsterOptions .monsterOptionsContainer {
+    display: flex;
+    flex: 0 0 50px;
+}
+
+.monsterInfo .monsterOptions .monsterOptionsLabel {
+    font-size: 40px;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.monsterInfo .monsterOptions .monsterOptionsContainer .icon {
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
 }

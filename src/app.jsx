@@ -13,9 +13,11 @@ import monsterCardsData from './monsterCardData.json';
 class App extends React.Component {
     renderCards(dataset, ReactClass) {
         return <div className='cards'>
-            {_.map(dataset, c => {
-                c.id = `${s4()}${s4()}`
-                return <ReactClass {...c} key={`card-${c.id}`}></ReactClass>
+            {_.flatMap(dataset, c => {
+                return _.times(_.get(c, 'quantity', 1), () => {
+                    c.id = `${s4()}${s4()}`
+                    return <ReactClass {...c} key={`card-${c.id}`}></ReactClass>
+                })
             })}
         </div>;
     }

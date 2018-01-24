@@ -1,6 +1,28 @@
 [
-  Ghoul: {beat: [{combat: 9, magic: 3}, {combat: 5, magic: 4, affliction: ‘injury’} ], reward: 5 , quantity: 1}
-  Slime: {beat: [{combat: 4}, {magic: 2}], reward: 2 , quantity: 3}
-  Zombie: {beat: [{combat: 6}, {magic: 3}], reward: 3 , quantity: 2}
-  Penguin: {beat: [{combat: 6, magic: 3}, {combat: 5 magic: 4}], reward: 4 , quantity: 2}
+  {
+    "name": "Ghoul",
+    "defeat": [{"combat": 11, "magic": 2}, {"combat": 5, "magic": 5, "afflictions": ["injury"]}],
+    "avoid": [{"ingenuity": 6, "scouting": 5}],
+    "xp": 3,
+    "quantity": 3
+  },
+  {
+    "name": "Slime",
+    "defeat": [{"combat": 4}, {"magic": 2}],
+    "xp": 1,
+    "quantity": 9
+  },
+  {
+    "name": "Zombie",
+    "defeat": [{"combat": 6}, {"magic": 3}],
+    "xp": 2,
+    "quantity": 6
+  },
+  {
+    "name": "Penguin",
+    "defeat": [{"combat": 7, "magic": 3}, {"combat": 5, "magic": 4}],
+    "avoid": [{"ingenuity": 4, "scouting": 4}],
+    "xp": 2,
+    "quantity": 6
+  }
 ]
