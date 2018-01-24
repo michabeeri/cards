@@ -96,12 +96,12 @@ body {
     left: 50%;
 }
 
-.cardContainer .pathsContainer .pathInfo .measureWithIcon {
+.measureWithIcon {
     position: relative;
     margin-right: 20px;
 }
 
-.cardContainer .pathsContainer .pathInfo .measureWithIcon .measureValue {
+.measureWithIcon .measureValue {
     position: absolute;
     top: 50px;
     left: 50px;
@@ -126,6 +126,7 @@ body {
     transform: rotate(180deg);
 }
 
+.cardContainer .mineralInfo .mineralBanner,
 .cardContainer .monsterInfo .monsterBanner,
 .cardContainer .itemInfo .itemBanner,
 .cardContainer .heroInfo .heroBanner{
@@ -135,6 +136,7 @@ body {
     flex: 0 0 100px;
 }
 
+.cardContainer .monsterInfo .monsterBanner .mineralName,
 .cardContainer .monsterInfo .monsterBanner .monsterName,
 .cardContainer .itemInfo .itemBanner .itemName,
 .cardContainer .heroInfo .heroBanner .heroName{
@@ -155,6 +157,7 @@ body {
     font-size: 40px;
 }
 
+.cardContainer .mineralInfo,
 .cardContainer .itemInfo {
     display: flex;
     flex-direction: column;
@@ -202,4 +205,10 @@ body {
     width: 50px;
     height: 50px;
     font-size: 40px;
+}
+
+.cardContainer .mineralInfo .mineralRequirements {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
 }

@@ -1,0 +1,9 @@
+[
+  {"name": "Asithrite", "ingenuity": 5, "xp": 1, "color": "#00e5ff", "quantity": 3},
+  {"name": "Elsmlingite" , "ingenuity": 6, "xp": 1, "color": "#00ff6f", "quantity": 3},
+  {"name": "Siliohumite" , "ingenuity": 7, "xp": 1, "color": "#f2ff00", "quantity": 3},
+  {"name": "Kyanadorite" , "ingenuity": 8, "xp": 2, "color": "#ff6200", "quantity": 3},
+  {"name": "Caliaumite" , "ingenuity": 9, "xp": 2, "color": "#ff0033", "quantity": 3},
+  {"name": "Indiertsite" , "ingenuity": 10, "xp": 2, "color": "#ff00e1", "quantity": 3},
+  {"name": "Tigexite" , "ingenuity": 12, "xp": 3, "color": "#2f00ff", "quantity": 3}
+]
