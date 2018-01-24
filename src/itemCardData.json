@@ -1,0 +1,18 @@
+[
+  {"name": "Converging Death Ray", "effect": "combat +3 if magic <= 4"},
+  {"name": "Thunderstorm Oracle Warblade", "effect": "combat + 1 per crusader in party"},
+  {"name": "StormFury Dancer", "effect": "combat +2"},
+  {"name": "Uplialf Tuba", "effect": "scouting +3 around monsters"},
+  {"name": "Stress Pipe Binoculars", "effect": "scouting +1 per highwayman in party"},
+  {"name": "Rulhorn", "effect": "scouting +2"},
+  {"name": "Blelm Ratchet", "effect": "ingenuity +3 on obstacles challange"},
+  {"name": "underwater matches", "effect": "ingenuity +2"},
+  {"name": "Shadow Tempest", "effect": "magic +2"},
+  {"name": "The Eye Of Jasper", "effect": "magic +3 if no hellion in party"},
+  {"name": "Destiny Bubble", "effect": "magic +1 for every wizard on fight challange"},
+  {"name": "Cuirass Of Woe", "effect": "hearts total +2"},
+  {"name": "Dire Battleplate", "effect": "hearts total +3 for party with all 5 classes"},
+  {"name": "Obsidian Faceguard", "effect": "hearts total +1 for every possesed in party"},
+  {"name": "Golden Waistband", "effect": "hearts total +1"},
+  {"name": "Cataclysmic Visage", "effect": "hearts total +5 and -1 for combat, magic, scouting and ingenutiy"}
+]

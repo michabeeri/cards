@@ -126,14 +126,17 @@ body {
     transform: rotate(180deg);
 }
 
+.cardContainer .itemInfo .itemBanner,
 .cardContainer .heroInfo .heroBanner{
     display: flex;
     align-items: center;
     font-size: 40px;
+    flex: 0 0 100px;
 }
 
+.cardContainer .itemInfo .itemBanner .itemName,
 .cardContainer .heroInfo .heroBanner .heroName{
-    margin-right: 20px;
+    margin: 0 20px;
     text-align: left;
 }
 
@@ -147,4 +150,17 @@ body {
 .cardContainer .heroInfo .heroStates .heroStateSingle{
     flex: 0 0 140px;
     font-size: 40px;
+}
+
+.cardContainer .itemInfo {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0;
+}
+
+.cardContainer .itemInfo .itemEffect{
+    flex: 1 0;
+    font-size: 40px;
+    border-top: solid;
+    padding-top: 40px;
 }
