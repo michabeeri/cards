@@ -7,3 +7,6 @@
 
 ## run
 - `node server.js`
+
+## run git ssh agent in background
+- `$ eval $(ssh-agent -s)`
