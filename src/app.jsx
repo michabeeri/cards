@@ -29,11 +29,12 @@ class App extends React.Component {
     render() {
         return (
             <div id='appContainer'>{_.compact([
-                this.renderCards(dangeonCardData, DangeonCard),
-                false && this.renderCards(heroCardsData, HeroCard),
+                false && this.renderCards(dangeonCardData, DangeonCard),
+                this.renderCards(heroCardsData, HeroCard),
                 false && this.renderCards(itemCardsData, ItemCard),
                 false && this.renderCards(monsterCardsData, MonsterCard),
                 false && this.renderCards(mineralCardsData, MineralCard),
+                false && this.renderCards(obstacleCardsData, ObstacleCard),
                 false && this.renderCards(obstacleCardsData, ObstacleCard)
             ])}</div>
         );

@@ -2,12 +2,15 @@ import React from 'react';
 import _ from 'lodash';
 
 const heroClassMetadata = {
-    'hellion': {color: '#ff6400', icon: 'fa-arrows-alt'},
-    'crusader': {color: '#a9a9a9', icon: 'fa-shield'},
-    'highwayman': {color: '#cd853f', icon: 'fa-paw'},
-    'plageDoctor': {color: '#2e8b57', icon: 'fa-flask'},
-    'Occultist': {color: '#322a61', icon: 'fa-moon-o'},
-    'possessed': {color: '#dc143c', icon: 'fa-viacoin'}
+    'Nomad': {color: '#ff6400', icon: 'fa-free-code-camp'},
+    'Crusader': {color: '#a9a9a9', icon: 'fa-shield'},
+    'Highwayman': {color: '#483D8B', icon: 'fa-paw'}
+}
+
+const terrainMetadata = {
+    'desert': {color: '#DAA520', icon: 'fa-sun-o'},
+    'mountains': {color: '#6495ED', icon: 'fa-snowflake-o'},
+    'forest': {color: '#008000', icon: 'fa-tree'}
 }
 
 class HeroCard extends React.Component {
@@ -23,17 +26,23 @@ class HeroCard extends React.Component {
     getHeroStates(hero) {
         return (<div className="heroStates">{_.compact([
             hero.combat && <div className="heroStateSingle"><i className="fa fa-gavel"></i>{` : ${hero.combat}`}</div>,
-            hero.ingenuity && <div className="heroStateSingle"><i className="fa fa-hand-paper-o"></i>{` : ${hero.ingenuity}`}</div>,
-            hero.scouting && <div className="heroStateSingle"><i className="fa fa-binoculars"></i>{` : ${hero.scouting}`}</div>,
-            hero.magic && <div className="heroStateSingle"><i className="fa fa-magic"></i>{` : ${hero.magic}`}</div>,
-            hero.hearts && <div className="heroStateSingle"><i className="fa fa-heart"></i>{` : ${hero.hearts}`}</div>
+            hero.pathfinding && <div className="heroStateSingle"><i className="fa fa-compass"></i>{` : ${hero.pathfinding}`}</div>,
+            hero.scouting && <div className="heroStateSingle"><i className="fa fa-binoculars"></i>{` : ${hero.scouting}`}</div>
         ])}</div>)
+    }
+
+    getHeroTerrainSymbol(hero) {
+        const meta = terrainMetadata[hero.terrain]
+        return (<div className="xpIndicator">
+            {meta && <div className="icon"><i className={`fa ${meta.icon}`} style={{color: meta.color}}></i></div>}
+        </div>)
     }
 
     getHeroInfo (hero) {
         return (<div className={`heroInfo ${hero.heroClass}`}>
             {this.getHeroBanner(hero)}
             {this.getHeroStates(hero)}
+            {this.getHeroTerrainSymbol(hero)}
         </div>);
     }
 
@@ -41,7 +50,6 @@ class HeroCard extends React.Component {
         return (
             <div className='cardContainer'>
                 {this.getHeroInfo(this.props)}
-                {this.getHeroInfo(_.assign({heroClass: 'possessed'}, this.props.possessed))}
             </div>
         );
     }
