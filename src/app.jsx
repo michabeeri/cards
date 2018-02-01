@@ -1,6 +1,6 @@
 import React from 'react';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import _ from 'lodash';
-import {s4} from './utils';
 import DangeonCard from './dangeonCard.jsx';
 import dangeonCardData from './dangeonCardData.json';
 import HeroCard from './heroCard.jsx';
@@ -14,29 +14,42 @@ import mineralCardsData from './mineralCardData.json';
 import ObstacleCard from './obstacleCard.jsx';
 import obstacleCardsData from './obstacleCardData.json';
 
-class App extends React.Component {
-    renderCards(dataset, ReactClass) {
-        return <div className='cards'>
-            {_.flatMap(dataset, c => {
-                return _.times(_.get(c, 'quantity', 1), () => {
-                    c.id = `${s4()}${s4()}`
-                    return <ReactClass {...c} key={`card-${c.id}`}></ReactClass>
-                })
-            })}
-        </div>;
-    }
+const CardsRenderer = ({CardClass, cardsData, path}) => (
+    <Route path={path} render={() => (
+        <div className='cards'>
+            {_.flatMap(cardsData, c =>
+                _.times(_.get(c, 'quantity', 1), () => <CardClass {...c}></CardClass>))}
+        </div>
+    )}/>
+)
 
+const NavigationBar = () => (
+    <div className="navigationBar">
+        <ul>
+            <li><Link to="/dungeon">dungeon</Link></li>
+            <li><Link to="/heroes">Heroes</Link></li>
+            <li><Link to="/items">Items</Link></li>
+            <li><Link to="/monsters">Monsters</Link></li>
+            <li><Link to="/minerals">Minerals</Link></li>
+            <li><Link to="/obstacles">Obstacles</Link></li>
+        </ul>
+    </div>
+)
+
+class App extends React.Component {
     render() {
         return (
-            <div id='appContainer'>{_.compact([
-                false && this.renderCards(dangeonCardData, DangeonCard),
-                this.renderCards(heroCardsData, HeroCard),
-                false && this.renderCards(itemCardsData, ItemCard),
-                false && this.renderCards(monsterCardsData, MonsterCard),
-                false && this.renderCards(mineralCardsData, MineralCard),
-                false && this.renderCards(obstacleCardsData, ObstacleCard),
-                false && this.renderCards(obstacleCardsData, ObstacleCard)
-            ])}</div>
+            <Router>
+                <div id='appContainer'>
+                    <CardsRenderer cardsData={dangeonCardData} CardClass={DangeonCard} path={'/dungeon'}/>
+                    <CardsRenderer cardsData={heroCardsData} CardClass={HeroCard} path={'/heroes'}/>
+                    <CardsRenderer cardsData={itemCardsData} CardClass={ItemCard} path={'/items'}/>
+                    <CardsRenderer cardsData={monsterCardsData} CardClass={MonsterCard} path={'/monsters'}/>
+                    <CardsRenderer cardsData={mineralCardsData} CardClass={MineralCard} path={'/minerals'}/>
+                    <CardsRenderer cardsData={obstacleCardsData} CardClass={ObstacleCard} path={'/obstacles'}/>
+                    <Route exact path='/' component={NavigationBar}/>
+                </div>
+            </Router>
         );
     }
 }

@@ -173,3 +173,8 @@ body {
     display: flex;
     justify-content: center;
 }
+
+.navigationBar {
+    font-size: 80px;
+    margin: 60px;
+}
