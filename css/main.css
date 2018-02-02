@@ -81,6 +81,7 @@ body {
     transform: rotate(180deg);
 }
 
+.banner,
 .cardContainer .dungeonBanner,
 .cardContainer .obstacleInfo .obstacleBanner,
 .cardContainer .mineralInfo .mineralBanner,
@@ -93,6 +94,7 @@ body {
     flex: 0 0 100px;
 }
 
+.banner .title,
 .cardContainer .dungeonBanner .dungeonName,
 .cardContainer .obstacleInfo .obstacleBanner .obstacleName,
 .cardContainer .mineralInfo .mineralBanner .mineralName,
@@ -103,15 +105,14 @@ body {
     text-align: left;
 }
 
-.cardContainer .heroInfo .heroStates{
+.states{
     display: flex;
-    flex: 1 0;
     flex-flow: wrap;
     margin-top: 20px;
 }
 
 .skillRequirement,
-.cardContainer .heroInfo .heroStates .heroStateSingle{
+.states .stateSingle{
     flex: 0 0 140px;
     font-size: 40px;
 }
@@ -132,6 +133,10 @@ body {
 }
 
 .xpIndicator {
+    display: flex;
+}
+
+.footer {
     position: absolute;
     bottom: 0;
     right: 0;

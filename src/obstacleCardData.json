@@ -1,42 +1,20 @@
 [
-  {
-    "name": "Rubble",
-    "requirements": [{"ingenuity": 5}, {"ingenuity": 3, "magic": 1}],
-    "quantity": 5
-  },
-  {
-    "name": "Rubble II",
-    "requirements": [{"ingenuity": 8}, {"ingenuity": 5, "magic": 2}],
-    "quantity": 2
-  },
-  {
-    "name": "Rubble III",
-    "requirements": [{"ingenuity": 12}, {"ingenuity": 8, "magic": 4}],
-    "quantity": 1
-  },
-  {
-    "name": "Barred Door",
-    "requirements": [{"ingenuity": 7}, {"magic": 4}],
-    "quantity": 3
-  },
-  {
-    "name": "Barred Door II",
-    "requirements": [{"ingenuity": 10}, {"magic": 6}],
-    "quantity": 1
-  },
-  {
-    "name": "Chasm",
-    "requirements": [{"ingenuity": 9}, {"magic": 5}],
-    "quantity": 1
-  },
-  {
-    "name": "Slippery Slope",
-    "requirements": [{"ingenuity": 6}, {"ingenuity": 3, "magic": 3}],
-    "quantity": 3
-  },
-  {
-    "name": "Crack",
-    "requirements": [{"ingenuity": 7}, {"ingenuity": 5, "magic": 2}],
-    "quantity": 2
-  }
+  {"name": "Trail", "pathfinding": 4, "terrain": "mountains", "quantity": 2},
+  {"name": "Pass", "pathfinding": 6, "terrain": "mountains", "quantity": 2},
+  {"name": "Peak I", "pathfinding": 10, "terrain": "mountains", "quantity": 1},
+  {"name": "Peak II", "pathfinding": 16, "terrain": "mountains", "quantity": 1},
+  {"name": "Crack", "pathfinding": 8, "terrain": "mountains", "quantity": 2},
+  {"name": "Chasm", "pathfinding": 13, "terrain": "mountains", "quantity": 1},
+  {"name": "Glacier", "pathfinding": 14, "terrain": "mountains", "quantity": 1},
+  {"name": "Trail", "pathfinding": 4, "terrain": "desert", "quantity": 2},
+  {"name": "Dune", "pathfinding": 6, "terrain": "desert", "quantity": 2},
+  {"name": "Cliff I", "pathfinding": 10, "terrain": "desert", "quantity": 2},
+  {"name": "Cliff II", "pathfinding": 16, "terrain": "desert", "quantity": 1},
+  {"name": "Canyon", "pathfinding": 8, "terrain": "desert", "quantity": 3},
+  {"name": "Trail", "pathfinding": 4, "terrain": "forest", "quantity": 2},
+  {"name": "dense trees", "pathfinding": 6, "terrain": "forest", "quantity": 2},
+  {"name": "Gloom", "pathfinding": 10, "terrain": "forest", "quantity": 2},
+  {"name": "Pitch black", "pathfinding": 16, "terrain": "forest", "quantity": 1},
+  {"name": "Cursed stream", "pathfinding": 8, "terrain": "forest", "quantity": 2},
+  {"name": "ancient roots", "pathfinding": 13, "terrain": "forest", "quantity": 1}
 ]

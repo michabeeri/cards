@@ -1,9 +1,48 @@
 [
-  {"name": "Asithrite", "ingenuity": 5, "xp": 1, "color": "#00e5ff", "quantity": 3},
-  {"name": "Elsmlingite" , "ingenuity": 6, "xp": 1, "color": "#00ff6f", "quantity": 3},
-  {"name": "Siliohumite" , "ingenuity": 7, "xp": 1, "color": "#f2ff00", "quantity": 3},
-  {"name": "Kyanadorite" , "ingenuity": 8, "xp": 2, "color": "#ff6200", "quantity": 3},
-  {"name": "Caliaumite" , "ingenuity": 9, "xp": 2, "color": "#ff0033", "quantity": 3},
-  {"name": "Indiertsite" , "ingenuity": 10, "xp": 2, "color": "#ff00e1", "quantity": 3},
-  {"name": "Tigexite" , "ingenuity": 12, "xp": 3, "color": "#2f00ff", "quantity": 3}
+  {"name": "Arenaria", "scouting": 7, "xp": 1, "terrain": "mountains", "quantity": 2},
+  {"name": "Ranogrin", "scouting": 8, "xp": 1, "terrain": "mountains", "quantity": 2},
+  {"name": "Hellebore petals", "scouting": 10, "xp": 2, "terrain": "mountains", "quantity": 2},
+  {"name": "Balisse fruit", "scouting": 12, "xp": 2, "terrain": "mountains", "quantity": 1},
+  {"name": "Buckthorn", "scouting": 15, "xp": 3, "terrain": "mountains", "quantity": 1},
+  {"name": "Honeysuckle", "scouting": 16, "xp": 3, "terrain": "mountains", "quantity": 1},
+  {"name": "Allspice", "scouting": 17, "xp": 4, "terrain": "mountains", "quantity": 1},
+
+  {"name": "Pringrape", "scouting": 7, "xp": 1, "terrain": "desert", "quantity": 2},
+  {"name": "Celandine", "scouting": 8, "xp": 1, "terrain": "desert", "quantity": 2},
+  {"name": "Hop umbels", "scouting": 10, "xp": 2, "terrain": "desert", "quantity": 2},
+  {"name": "Puffball", "scouting": 13, "xp": 2, "terrain": "desert", "quantity": 1},
+  {"name": "Bryonia", "scouting": 15, "xp": 3, "terrain": "desert", "quantity": 1},
+  {"name": "Mistletoe", "scouting": 17, "xp": 3, "terrain": "desert", "quantity": 1},
+  {"name": "Bloodmoss", "scouting": 19, "xp": 4, "terrain": "desert", "quantity": 1},
+
+  {"name": "Bison grass", "scouting": 7, "xp": 1, "terrain": "forest", "quantity": 2},
+  {"name": "Cortinarius", "scouting": 8, "xp": 1, "terrain": "forest", "quantity": 2},
+  {"name": "Longrube", "scouting": 10, "xp": 2, "terrain": "forest", "quantity": 2},
+  {"name": "Ginatia petals", "scouting": 12, "xp": 2, "terrain": "forest", "quantity": 1},
+  {"name": "Moleyarrow", "scouting": 15, "xp": 3, "terrain": "forest", "quantity": 1},
+  {"name": "Han fiber", "scouting": 16, "xp": 3, "terrain": "forest", "quantity": 1},
+  {"name": "Nostrix", "scouting": 17, "xp": 4, "terrain": "forest", "quantity": 1}
 ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

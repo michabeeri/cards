@@ -3,16 +3,13 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import _ from 'lodash';
 import DangeonCard from './dangeonCard.jsx';
 import dangeonCardData from './dangeonCardData.json';
-import HeroCard from './heroCard.jsx';
 import heroCardsData from './heroCardData.json';
 import ItemCard from './itemCard.jsx';
 import itemCardsData from './itemCardData.json';
-import MonsterCard from './monsterCard.jsx';
 import monsterCardsData from './monsterCardData.json';
-import MineralCard from './mineralCard.jsx';
 import mineralCardsData from './mineralCardData.json';
-import ObstacleCard from './obstacleCard.jsx';
 import obstacleCardsData from './obstacleCardData.json';
+import {HeroCard, ObstacleCard, MonsterCard, MineralCard} from './cardClasses.jsx';
 
 const CardsRenderer = ({CardClass, cardsData, path}) => (
     <Route path={path} render={() => (

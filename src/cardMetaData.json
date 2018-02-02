@@ -1,0 +1,12 @@
+{
+  "heroClass": {
+    "Nomad": {"color": "#ff6400", "icon": "fa-free-code-camp"},
+    "Crusader": {"color": "#a9a9a9", "icon": "fa-shield"},
+    "Highwayman": {"color": "#483D8B", "icon": "fa-paw"}
+  },
+  "terrain": {
+    "desert": {"color": "#DAA520", "icon": "fa-sun-o"},
+    "mountains": {"color": "#6495ED", "icon": "fa-snowflake-o"},
+    "forest": {"color": "#008000", "icon": "fa-tree"}
+  }
+}

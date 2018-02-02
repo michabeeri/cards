@@ -5,7 +5,7 @@ class ObstacleCard extends React.Component {
     getObstacleInfo () {
         return (<div className="obstacleInfo">
             <div className="obstacleBanner">
-                <div className="icon"><i className="fa fa-exclamation-triangle" style={{color: '#b8860b'}}></i></div>
+                <div className="icon"><i className="fa fa-exclamation-triangle"></i></div>
                 <div className="obstacleName">{this.props.name}</div>
             </div>
             {_.map(this.props.requirements, req => (

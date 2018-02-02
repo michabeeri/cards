@@ -1,28 +1,25 @@
 [
-  {
-    "name": "Ghoul",
-    "defeat": [{"combat": 11, "magic": 2}, {"combat": 5, "magic": 5, "afflictions": ["injury"]}],
-    "avoid": [{"ingenuity": 6, "scouting": 5}],
-    "xp": 3,
-    "quantity": 3
-  },
-  {
-    "name": "Slime",
-    "defeat": [{"combat": 4}, {"magic": 2}],
-    "xp": 1,
-    "quantity": 9
-  },
-  {
-    "name": "Zombie",
-    "defeat": [{"combat": 6}, {"magic": 3}],
-    "xp": 2,
-    "quantity": 6
-  },
-  {
-    "name": "Penguin",
-    "defeat": [{"combat": 7, "magic": 3}, {"combat": 5, "magic": 4}],
-    "avoid": [{"ingenuity": 4, "scouting": 4}],
-    "xp": 2,
-    "quantity": 6
-  }
+  {"name": "Gremlin", "combat": 6, "terrain": "mountains", "xp": 1, "quantity": 2},
+  {"name": "Gargoyle", "combat": 8, "terrain": "mountains", "xp": 1, "quantity": 2},
+  {"name": "Golem", "combat": 10, "terrain": "mountains", "xp": 2, "quantity": 2},
+  {"name": "Mage", "combat": 12, "terrain": "mountains", "xp": 2, "quantity": 1},
+  {"name": "Genie", "combat": 14, "terrain": "mountains", "xp": 3, "quantity": 1},
+  {"name": "Naga", "combat": 16, "terrain": "mountains", "xp": 3, "quantity": 1},
+  {"name": "Giant", "combat": 18, "terrain": "mountains", "xp": 4, "quantity": 1},
+
+  {"name": "Goblin", "combat": 6, "terrain": "desert", "xp": 1, "quantity": 2},
+  {"name": "Wolf Rider", "combat": 8, "terrain": "desert", "xp": 1, "quantity": 2},
+  {"name": "Orc", "combat": 10, "terrain": "desert", "xp": 2, "quantity": 2},
+  {"name": "Ogre", "combat": 12, "terrain": "desert", "xp": 2, "quantity": 1},
+  {"name": "Roc", "combat": 14, "terrain": "desert", "xp": 3, "quantity": 1},
+  {"name": "Cyclops", "combat": 16, "terrain": "desert", "xp": 3, "quantity": 1},
+  {"name": "Behemoth", "combat": 18, "terrain": "desert", "xp": 4, "quantity": 1},
+
+  {"name": "Gnoll", "combat": 6, "terrain": "forest", "xp": 1, "quantity": 2},
+  {"name": "Lizardman", "combat": 8, "terrain": "forest", "xp": 1, "quantity": 2},
+  {"name": "Serpent Fly", "combat": 10, "terrain": "forest", "xp": 2, "quantity": 2},
+  {"name": "Basilisk", "combat": 13, "terrain": "forest", "xp": 2, "quantity": 1},
+  {"name": "Gorgon", "combat": 15, "terrain": "forest", "xp": 3, "quantity": 1},
+  {"name": "Wyvern", "combat": 17, "terrain": "forest", "xp": 3, "quantity": 1},
+  {"name": "Hydra", "combat": 19, "terrain": "forest", "xp": 4, "quantity": 1}
 ]
