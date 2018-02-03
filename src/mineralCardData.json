@@ -1,27 +1,27 @@
 [
-  {"name": "Arenaria", "scouting": 7, "xp": 1, "terrain": "mountains", "quantity": 2},
-  {"name": "Ranogrin", "scouting": 8, "xp": 1, "terrain": "mountains", "quantity": 2},
-  {"name": "Hellebore petals", "scouting": 10, "xp": 2, "terrain": "mountains", "quantity": 2},
-  {"name": "Balisse fruit", "scouting": 12, "xp": 2, "terrain": "mountains", "quantity": 1},
-  {"name": "Buckthorn", "scouting": 15, "xp": 3, "terrain": "mountains", "quantity": 1},
-  {"name": "Honeysuckle", "scouting": 16, "xp": 3, "terrain": "mountains", "quantity": 1},
-  {"name": "Allspice", "scouting": 17, "xp": 4, "terrain": "mountains", "quantity": 1},
+  {"name": "Arenaria", "gather": [{"scouting": 6}, {"terrain": 1, "scouting": 4}], "terrain": "mountains", "quantity": 2},
+  {"name": "Ranogrin", "gather": [{"scouting": 8}, {"terrain": 1, "scouting": 6}], "terrain": "mountains", "quantity": 2},
+  {"name": "Hellebore petals", "gather": [{"scouting": 10}, {"terrain": 2, "scouting": 5}], "terrain": "mountains", "quantity": 2},
+  {"name": "Balisse fruit", "gather": [{"scouting": 12}, {"terrain": 1, "scouting": 10}, {"terrain": 2, "scouting": 7}], "terrain": "mountains", "quantity": 1},
+  {"name": "Buckthorn", "gather": [{"scouting": 15}, {"terrain": 2, "scouting": 10}], "terrain": "mountains", "quantity": 1},
+  {"name": "Honeysuckle", "gather": [{"scouting": 16}, {"terrain": 2, "scouting": 11}, {"terrain": 3, "scouting": 8}], "terrain": "mountains", "quantity": 1},
+  {"name": "Allspice", "gather": [{"scouting": 17}, {"terrain": 2, "scouting": 12}, {"terrain": 3, "scouting": 9}], "terrain": "mountains", "quantity": 1},
 
-  {"name": "Pringrape", "scouting": 7, "xp": 1, "terrain": "desert", "quantity": 2},
-  {"name": "Celandine", "scouting": 8, "xp": 1, "terrain": "desert", "quantity": 2},
-  {"name": "Hop umbels", "scouting": 10, "xp": 2, "terrain": "desert", "quantity": 2},
-  {"name": "Puffball", "scouting": 13, "xp": 2, "terrain": "desert", "quantity": 1},
-  {"name": "Bryonia", "scouting": 15, "xp": 3, "terrain": "desert", "quantity": 1},
-  {"name": "Mistletoe", "scouting": 17, "xp": 3, "terrain": "desert", "quantity": 1},
-  {"name": "Bloodmoss", "scouting": 19, "xp": 4, "terrain": "desert", "quantity": 1},
+  {"name": "Pringrape", "gather": [{"scouting": 6}, {"terrain": 1, "scouting": 4}], "terrain": "desert", "quantity": 2},
+  {"name": "Celandine", "gather": [{"scouting": 8}, {"terrain": 1, "scouting": 6}], "terrain": "desert", "quantity": 2},
+  {"name": "Hop umbels", "gather": [{"scouting": 10}, {"terrain": 2, "scouting": 5}], "terrain": "desert", "quantity": 2},
+  {"name": "Puffball", "gather": [{"scouting": 13}, {"terrain": 1, "scouting": 11}, {"terrain": 2, "scouting": 8}], "terrain": "desert", "quantity": 1},
+  {"name": "Bryonia", "gather": [{"scouting": 15}, {"terrain": 2, "scouting": 11}], "terrain": "desert", "quantity": 1},
+  {"name": "Mistletoe", "gather": [{"scouting": 17}, {"terrain": 2, "scouting": 12}, {"terrain": 3, "scouting": 9}], "terrain": "desert", "quantity": 1},
+  {"name": "Bloodmoss", "gather": [{"scouting": 19}, {"terrain": 2, "scouting": 14}, {"terrain": 11, "scouting": 3}], "terrain": "desert", "quantity": 1},
 
-  {"name": "Bison grass", "scouting": 7, "xp": 1, "terrain": "forest", "quantity": 2},
-  {"name": "Cortinarius", "scouting": 8, "xp": 1, "terrain": "forest", "quantity": 2},
-  {"name": "Longrube", "scouting": 10, "xp": 2, "terrain": "forest", "quantity": 2},
-  {"name": "Ginatia petals", "scouting": 12, "xp": 2, "terrain": "forest", "quantity": 1},
-  {"name": "Moleyarrow", "scouting": 15, "xp": 3, "terrain": "forest", "quantity": 1},
-  {"name": "Han fiber", "scouting": 16, "xp": 3, "terrain": "forest", "quantity": 1},
-  {"name": "Nostrix", "scouting": 17, "xp": 4, "terrain": "forest", "quantity": 1}
+  {"name": "Bison grass", "gather": [{"scouting": 6}, {"terrain": 1, "scouting": 4}], "terrain": "forest", "quantity": 2},
+  {"name": "Cortinarius", "gather": [{"scouting": 8}, {"terrain": 1, "scouting": 6}], "terrain": "forest", "quantity": 2},
+  {"name": "Longrube", "gather": [{"scouting": 10}, {"terrain": 2, "scouting": 5}], "terrain": "forest", "quantity": 2},
+  {"name": "Ginatia petals", "gather": [{"scouting": 12}, {"terrain": 1, "scouting": 10}, {"terrain": 2, "scouting": 7}], "terrain": "forest", "quantity": 1},
+  {"name": "Moleyarrow", "gather": [{"scouting": 15}, {"terrain": 2, "scouting": 10}], "terrain": "forest", "quantity": 1},
+  {"name": "Han fiber", "gather": [{"scouting": 16}, {"terrain": 2, "scouting": 11}, {"terrain": 3, "scouting": 8}], "terrain": "forest", "quantity": 1},
+  {"name": "Nostrix", "gather": [{"scouting": 17}, {"terrain": 2, "scouting": 12}, {"terrain": 3, "scouting": 9}], "terrain": "forest", "quantity": 1}
 ]
 
 

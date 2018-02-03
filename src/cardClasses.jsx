@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-import {Banner, States, Footer, XPIndicator} from './cardComponents.jsx';
+import {Banner, States, Description, Footer, XPIndicator, Alternatives} from './cardComponents.jsx';
 import cardMetaData from './cardMetaData.json';
 
 const HeroCard = props => (
@@ -20,23 +20,29 @@ const ObstacleCard = props => (
 const MonsterCard = props => (
     <div className='cardContainer'>
         <Banner icon={'fa-arrows-alt'} name={props.name}/>
+        <Alternatives alternatives={props.defeat}/>
         <XPIndicator xp={props.xp}/>
-        <States {...props}/>
         <Footer {...cardMetaData.terrain[props.terrain]}/>
     </div>)
 
 const MineralCard = props => (
     <div className='cardContainer'>
         <Banner icon={'fa-pagelines'} name={props.name}/>
-        <XPIndicator xp={props.xp}/>
-        <States {...props}/>
+        <Alternatives alternatives={props.gather}/>
         <Footer {...cardMetaData.terrain[props.terrain]}/>
+    </div>)
+
+const DungeonCard = props => (
+    <div className='cardContainer'>
+        <Banner {...cardMetaData.action[props.action]} name={props.name}/>
+        <Description description={props.description}/>
     </div>)
 
 export {
     HeroCard,
     ObstacleCard,
     MonsterCard,
-    MineralCard
+    MineralCard,
+    DungeonCard
 }
 

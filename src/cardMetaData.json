@@ -8,5 +8,12 @@
     "desert": {"color": "#DAA520", "icon": "fa-sun-o"},
     "mountains": {"color": "#6495ED", "icon": "fa-snowflake-o"},
     "forest": {"color": "#008000", "icon": "fa-tree"}
+  },
+  "action": {
+    "journey": {"icon": "fa-arrows"},
+    "quest": {"icon": "fa-bullseye"},
+    "recruit": {"icon": "fa-user"},
+    "camp": {"icon": "fa-anchor"},
+    "gather": {"icon": "fa-shopping-basket"}
   }
 }

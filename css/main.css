@@ -183,3 +183,10 @@ body {
     font-size: 80px;
     margin: 60px;
 }
+
+.description {
+    font-size: 40px;
+    margin: 20px;
+    border-top: solid;
+    padding-top: 40px;
+}
