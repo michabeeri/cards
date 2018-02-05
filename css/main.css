@@ -9,6 +9,7 @@ body {
 
 #appContainer {
     font-family: muli;
+    display: inline-block;
 }
 
 .cards {
