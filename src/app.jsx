@@ -1,12 +1,13 @@
-import React from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import _ from 'lodash';
-import dangeonCardData from './dangeonCardData.json';
-import heroCardsData from './heroCardData.json';
-import monsterCardsData from './monsterCardData.json';
-import mineralCardsData from './mineralCardData.json';
-import obstacleCardsData from './obstacleCardData.json';
-import {DungeonCard, HeroCard, ObstacleCard, MonsterCard, MineralCard} from './cardClasses.jsx';
+import React from 'react'
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
+import _ from 'lodash'
+import dangeonCardData from './dangeonCardData.json'
+import heroCardsData from './heroCardData.json'
+import monsterCardsData from './monsterCardData.json'
+import mineralCardsData from './mineralCardData.json'
+import obstacleCardsData from './obstacleCardData.json'
+import {DungeonCard, HeroCard, ObstacleCard, MonsterCard, MineralCard} from './cardClasses.jsx'
+import Hexagons from './hexagons.jsx'
 
 const CardsRenderer = ({CardClass, cardsData, path}) => (
     <Route path={`/${path}/:from?/:to?`} render={({match}) => (
@@ -28,6 +29,7 @@ const NavigationBar = () => (
             <li><Link to="/monsters">Monsters</Link></li>
             <li><Link to="/minerals">Minerals</Link></li>
             <li><Link to="/obstacles">Obstacles</Link></li>
+            <li><Link to="/hexagons">Hexagons</Link></li>
         </ul>
     </div>
 )
@@ -42,11 +44,12 @@ class App extends React.Component {
                     <CardsRenderer cardsData={monsterCardsData} CardClass={MonsterCard} path={'monsters'}/>
                     <CardsRenderer cardsData={mineralCardsData} CardClass={MineralCard} path={'minerals'}/>
                     <CardsRenderer cardsData={obstacleCardsData} CardClass={ObstacleCard} path={'obstacles'}/>
+                    <Route path={`/hexagons`} render={({match}) => (<Hexagons/>)}/>
                     <Route exact path='/' component={NavigationBar}/>
                 </div>
             </Router>
-        );
+        )
     }
 }
 
-export default App;
+export default App

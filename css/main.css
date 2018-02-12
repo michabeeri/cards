@@ -23,8 +23,8 @@ body {
 
 .cardContainer {
     position: relative;
-    height: 620px;
-    width: 438px;
+    height: 1240px;
+    width: 876px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -190,4 +190,12 @@ body {
     margin: 20px;
     border-top: solid;
     padding-top: 40px;
+}
+
+.hexagon {
+    position: absolute;
+    fill: none;
+    stroke: black;
+    stroke-linecap: round;
+    stroke-linejoin: miter;
 }
