@@ -27,6 +27,7 @@
 import React from 'react';
 import _ from 'lodash';
 
+const areaRadius = 4
 const hexsData = [[-12,4], [-9,2], [-6,0], [-3,2], [0,0], [3,-2], [3,-6], [0,-8], [0,-12]]
 const hexSize = [100, 100]
 const cardSize = [876, 1240]
@@ -51,10 +52,30 @@ class Hexagon extends React.Component {
     }
 }
 
-const Hexagons = () => (
+const HexagonTrack = () => (
     <div className='cardContainer'>
         {_.map(hexsData, c => <Hexagon x={c[0]} y={c[1]}/>)}
     </div>)
 
-export default Hexagons;
+const HexagonArea = () => {
+    const lineIndexes = _.range(areaRadius * -1, areaRadius * 1 + 1)
+    const hexCoordinates = _.flatMap(lineIndexes, li => {
+        const hexesInLine = 2 * areaRadius + 1 - Math.abs(li)
+        const xValues = _.times(hexesInLine, () => li * 3)
+        const yValues = hexesInLine % 2 ?
+            _.range(-4 * Math.floor(hexesInLine / 2), 4 * (Math.floor(hexesInLine / 2) + 1), 4) :
+            _.range(-4 * (hexesInLine / 2 - 1) - 2, 4 * (hexesInLine / 2 + 1) - 2, 4)
+
+        return _.zip(xValues, yValues)
+    })
+
+    return (<div className='mapArea'>
+            {_.map(hexCoordinates, c => <Hexagon x={c[0]} y={c[1]}/>)}
+        </div>)
+}
+
+export {
+    HexagonTrack,
+    HexagonArea
+};
 

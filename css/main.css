@@ -199,3 +199,10 @@ body {
     stroke-linecap: round;
     stroke-linejoin: miter;
 }
+
+.mapArea {
+    position: relative;
+    height: 800px;
+    width: 800px;
+    box-shadow: inset 0px 0px 0px 2px black;
+}
