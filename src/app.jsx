@@ -46,7 +46,7 @@ class App extends React.Component {
                     <CardsRenderer cardsData={mineralCardsData} CardClass={MineralCard} path={'minerals'}/>
                     <CardsRenderer cardsData={obstacleCardsData} CardClass={ObstacleCard} path={'obstacles'}/>
                     <Route path={`/hexagons`} render={({match}) => (<HexagonTrack/>)}/>
-                    <Route path={`/map-area`} render={({match}) => (<HexagonArea/>)}/>
+                    <Route path={`/map-area/:str?`} render={({match}) => (<HexagonArea params={match.params.str} areaData={{}} radius={3}/>)}/>
                     <Route exact path='/' component={NavigationBar}/>
                 </div>
             </Router>
