@@ -41,15 +41,37 @@
 import React from 'react';
 import _ from 'lodash';
 
-const areaRadius = 4
 const hexsData = [[-12,4], [-9,2], [-6,0], [-3,2], [0,0], [3,-2], [3,-6], [0,-8], [0,-12]]
-const hexSize = [100, 100]
+const hexSize = [104, 104]
 const cardSize = [876, 1240]
-const strokeWidth = 4
-const points = _.map([0, 0.5, 0.25, 0, 0.75, 0, 1, 0.5, 0.75, 1, 0.25, 1, 0, 0.5],
-    (r, i) => 0.5 * strokeWidth + r * (hexSize[i % 2] - strokeWidth))
+const strokeWidth = 1
+const points = _.map([0, 0.5, 0.25, 0, 0.75, 0, 1, 0.5, 0.75, 1, 0.25, 1, 0, 0.5], unitToRealLocation)
+
+const blocks = _.transform({
+    'n': [0.1875, 0.125, 0.25, 0, 0.75, 0, 0.8125, 0.125],
+    'ne': [0.625, 0, 0.75, 0, 1, 0.5, 0.9375, 0.6125],
+    'se': [0.9375, 0.375, 1, 0.5, 0.75, 1, 0.625, 1],
+    's': [0.8125, 0.875, 0.75, 1, 0.25, 1, 0.1875, 0.875],
+    'sw': [0.375, 1, 0.25, 1, 0, 0.5, 0.0625, 0.375],
+    'nw': [0.0625, 0.625, 0, 0.5, 0.25, 0, 0.375, 0]
+}, function(res, pts, key) {
+    return res[key] = _.map(pts, unitToRealLocation)
+}, {})
+
+function unitToRealLocation(r, i) {
+    return 0.5 * strokeWidth + r * (hexSize[i % 2] - strokeWidth)
+}
 
 class Hexagon extends React.Component {
+    getBlocks() {
+        return (<g className='blocks'>
+            {_(blocks)
+                .pickBy((v, b) => _.includes(_.get(this.props, ['data', 'blocks'], []), b))
+                .map(pts => <polygon points={pts} fill="black"/>)
+                .value()}
+        </g>)
+    }
+
     render() {
         const style = {
             width: hexSize[0],
@@ -62,6 +84,7 @@ class Hexagon extends React.Component {
             <div className="info">{this.props.info}</div>
             <svg width={hexSize[0]} height={hexSize[1]} xmlns="http://www.w3.org/2000/svg" version="1.1">
                 <polyline points={points} strokeWidth={strokeWidth}/>
+                {this.getBlocks()}
             </svg>
         </div>)
     }
@@ -71,6 +94,15 @@ const HexagonTrack = () => (
     <div className='cardContainer'>
         {_.map(hexsData, c => <Hexagon x={c[0]} y={c[1]}/>)}
     </div>)
+
+const initialAreaData = {
+    '0,0': {blocks: ['n']},
+    '1,-1': {blocks: ['ne']},
+    '1,-2': {blocks: ['nw']},
+    '-1,-2': {blocks: ['s']},
+    '-1,2': {blocks: ['se']},
+    '2,-3': {blocks: ['sw']},
+}
 
 const HexagonArea = ({areaData, radius, params}) => {
     params = params ? JSON.parse('{"' + decodeURI(params).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}') : {}
@@ -83,7 +115,7 @@ const HexagonArea = ({areaData, radius, params}) => {
                    x: 3 * i,
                    y: 4 * j + 2 * i,
                    info: `${i},${j}`,
-                   data: areaData[`${i},${j}`]
+                   data: initialAreaData[`${i},${j}`]
                })
            }
         }
