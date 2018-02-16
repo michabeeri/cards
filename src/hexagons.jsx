@@ -42,96 +42,54 @@ import React from 'react';
 import _ from 'lodash';
 
 const hexSize = [120, 120]
-const areaRadius = 3
-const areaSize = [hexSize[0] * (0.75 * 2 * areaRadius + 1), hexSize[1] * (2 * areaRadius + 1)]
 const strokeWidth = 2
 const points = _.map([0, 0.5, 0.25, 0, 0.75, 0, 1, 0.5, 0.75, 1, 0.25, 1, 0, 0.5], unitToRealLocation)
-
-const blocks = _.transform({
-    'n': [0.1875, 0.125, 0.25, 0, 0.75, 0, 0.8125, 0.125],
-    'ne': [0.625, 0, 0.75, 0, 1, 0.5, 0.9375, 0.6125],
-    'se': [0.9375, 0.375, 1, 0.5, 0.75, 1, 0.625, 1],
-    's': [0.8125, 0.875, 0.75, 1, 0.25, 1, 0.1875, 0.875],
-    'sw': [0.375, 1, 0.25, 1, 0, 0.5, 0.0625, 0.375],
-    'nw': [0.0625, 0.625, 0, 0.5, 0.25, 0, 0.375, 0]
-}, function(res, pts, key) {
-    return res[key] = _.map(pts, unitToRealLocation)
-}, {})
 
 function unitToRealLocation(r, i) {
     return 0.5 * strokeWidth + r * (hexSize[i % 2] - strokeWidth)
 }
 
-class Hexagon extends React.Component {
-    getBlocks() {
-        return (<g className='blocks'>
-            {_(blocks)
-                .pickBy((v, b) => _.includes(_.get(this.props, ['data', 'blocks'], []), b))
-                .map(pts => <polygon points={pts} fill="black"/>)
-                .value()}
-        </g>)
+const Hexagon = ({pos, blocked}) => {
+    const pixelPos = [0.25 * (3 * pos[0]) * hexSize[0], 0.25 * (4 * pos[1] + 2 * pos[0]) * hexSize[1]]
+    const info = `${pos[0]},${pos[1]}`
+    const style = {
+        width: hexSize[0],
+        height: hexSize[1],
+        left: pixelPos[0],
+        top: pixelPos[1]
     }
 
-    render() {
-        const pos = this.props.pos
-        const style = {
-            width: hexSize[0],
-            height: hexSize[1],
-            left: 0.5 * areaSize[0] + (0.25 * pos[0] - 0.5) * hexSize[0],
-            top: 0.5 * areaSize[1] + (0.25 * pos[1] - 0.5) * hexSize[1],
-        }
-
-        return (<div className="hexagon" style={style}>
-            <div className="info">{this.props.info}</div>
-            <svg viewBox={`0 0 ${hexSize[0]} ${hexSize[1]}`} xmlns="http://www.w3.org/2000/svg" version="1.1">
-                <polyline
-                    points={points}
-                    strokeWidth={strokeWidth}
-                    fill={_.get(this.props, ['data', 'blocked'], false) ? 'black' : ''}/>
-                {this.getBlocks()}
-            </svg>
-        </div>)
-    }
-}
-
-const hexsData = [[-12,4], [-9,2], [-6,0], [-3,2], [0,0], [3,-2], [3,-6], [0,-8], [0,-12]]
-const HexagonTrack = () => (
-    <div className='cardContainer'>
-        {_.map(hexsData, pos => <Hexagon pos={pos}/>)}
+    return (<div className="hexagon" style={style}>
+        <div className="info">{info}</div>
+        <svg viewBox={`0 0 ${hexSize[0]} ${hexSize[1]}`} xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <polyline
+                points={points}
+                strokeWidth={strokeWidth}
+                fill={blocked ? 'black' : ''}/>
+        </svg>
     </div>)
-
-const initialAreaData = {
-    '1,-1': {blocked: true},
-    '1,0': {blocked: true},
-    '1,1': {blocked: true},
-    '0,-1': {blocked: true},
-    '2,-1': {blocked: true},
-    '0,2': {blocked: true}
 }
 
-const HexagonArea = ({areaData, radius, params}) => {
+const HexagonArea = ({areaData, params}) => {
     params = params ? JSON.parse('{"' + decodeURI(params).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}') : {}
 
-    const hexs = [];
-    for(let i = radius * -1; i <= radius; i++) {
-        for(let j = radius * -1; j <= radius; j++) {
-           if (Math.abs(i + j) <= 3) {
-               hexs.push({
-                   pos: [3 * i, 4 * j + 2 * i],
-                   info: `${i},${j}`,
-                   data: initialAreaData[`${i},${j}`]
-               })
-           }
-        }
-    }
-
-    return (<div className={`mapArea ${params.info ? 'showInfo' : ''}`} style={{width: areaSize[0], height: areaSize[1]}}>
-            {_.map(hexs, h => <Hexagon {...h}/>)}
+    return (<div className={`mapArea ${params.info ? 'showInfo' : ''}`}>
+            {_.map(areaData, h => <Hexagon {...h}/>)}
         </div>)
 }
 
 export {
-    HexagonTrack,
     HexagonArea
 };
 
+
+// data generation
+// (() => {
+//     let str
+//     for (let i = 0; i < 12; i++){
+//         for (let j = -i; j < 12 - i; j++){
+//             str += `{"pos": [${i}, ${j}]},\n`
+//         }
+//     }
+//     console.log(str)
+// })()
