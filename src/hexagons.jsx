@@ -49,7 +49,7 @@ function unitToRealLocation(r, i) {
     return 0.5 * strokeWidth + r * (hexSize[i % 2] - strokeWidth)
 }
 
-const Hexagon = ({pos, blocked}) => {
+const Hexagon = ({pos, clickHandler, blocked}) => {
     const pixelPos = [0.25 * (3 * pos[0]) * hexSize[0], 0.25 * (4 * pos[1] + 2 * pos[0]) * hexSize[1]]
     const info = `${pos[0]},${pos[1]}`
     const style = {
@@ -59,7 +59,7 @@ const Hexagon = ({pos, blocked}) => {
         top: pixelPos[1]
     }
 
-    return (<div className="hexagon" style={style}>
+    return (<div className="hexagon" style={style} onClick={clickHandler}>
         <div className="info">{info}</div>
         <svg viewBox={`0 0 ${hexSize[0]} ${hexSize[1]}`} xmlns="http://www.w3.org/2000/svg" version="1.1">
             <polyline
@@ -70,25 +70,58 @@ const Hexagon = ({pos, blocked}) => {
     </div>)
 }
 
-const HexagonArea = ({areaData, params}) => {
-    params = params ? JSON.parse('{"' + decodeURI(params).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}') : {}
+class HexagonArea extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            areaData: props.areaData,
+            editState: {}
+        };
+    }
 
-    return (<div className={`mapArea ${params.info ? 'showInfo' : ''}`}>
-            {_.map(areaData, h => <Hexagon {...h}/>)}
+    setHex(hex) {
+        const newHex = _.assign({}, hex, this.state.editState)
+        const newAreaData = _.assign({}, this.state.areaData, {[hex.id] : newHex})
+        this.setState({areaData: newAreaData})
+    }
+
+    printDataSet() {
+        let str = '{\n'
+        _.forEach(this.state.areaData, h => {
+            str += `${JSON.stringify(h)},\n`
+        })
+        str += '}'
+        console.log(str)
+    }
+
+    render() {
+        const params = this.props.params ? JSON.parse('{"' + decodeURI(this.props.params).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}') : {}
+        return (<div className={`mapArea ${params.info ? 'showInfo' : ''}`}>
+            {_.map(this.state.areaData, h => <Hexagon {...h} clickHandler={() => this.setHex(h)}/>)}
+            <div className="editState">
+                <div className="button" onClick={() => this.setState({editState: {blocked: true}})}>
+                    <div className="icon"><i className={`fa fa-square`}></i></div>
+                </div>
+                <div className="button" onClick={() => this.setState({editState: {blocked: false}})}>
+                    <div className="icon"><i className={`fa fa-square-o`}></i></div>
+                </div>
+                <div className="button" onClick={() => this.printDataSet()}>
+                    <div className="icon"><i className={`fa fa-print`}></i></div>
+                </div>
+            </div>
         </div>)
+    }
 }
 
 export {
     HexagonArea
 };
 
-
-// data generation
 // (() => {
 //     let str
 //     for (let i = 0; i < 12; i++){
-//         for (let j = -i; j < 12 - i; j++){
-//             str += `{"pos": [${i}, ${j}]},\n`
+//         for (let j = - Math.floor(i/2); j < 12 - Math.floor(i/2); j++){
+//             str += `"${i},${j}": {"id": "${i},${j}", "pos": [${i}, ${j}]},\n`
 //         }
 //     }
 //     console.log(str)
